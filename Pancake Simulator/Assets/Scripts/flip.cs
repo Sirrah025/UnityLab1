@@ -10,6 +10,8 @@ public class flip : MonoBehaviour
     private float force = 0f;
     private float randforce;
     private bool flipped = false;
+    private float maxforce = 500f;
+    private float torqueRate = 2f;
     public int height;
 
     // Start is called before the first frame update
@@ -22,16 +24,28 @@ public class flip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         randforce = Random.Range(-250f, 250f);
          if (!flipped && Input.GetMouseButton(0))
          {
              force += forceRate;
          }
-         else if(!flipped && Input.GetMouseButtonDown(0))
+         else if(!flipped && Input.GetMouseButtonUp(0))
          {
+            if(force > maxforce)
+            {
+                force = maxforce;
+            }
              rb2D.AddForce(transform.up * force);
              rb2D.AddForce(transform.right * randforce);
-             flipped = true;
+             rb2D.AddTorque(randforce * torqueRate);
+             //flipped = true;
          } 
+
+         if (rb2D.position.y < -5)
+        {
+            rb2D.position = Vector3.zero;
+        }
+
     }
 
     public bool isFlipped()
