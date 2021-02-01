@@ -7,7 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public int baseScore; //multiplied by height on a succesful flip
+    public float baseScore; //multiplied by height on a succesful flip
     public TextMeshProUGUI scoreText;
 
     private int score; //total score that is displayed
@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour
 
     //called when pancake succesfully flips
     //increases score by height times baseScore
-    internal void addScore(int height)
+    internal void addScore(float height)
     {
-        score += baseScore * height;
+        score += (int)baseScore * (int)height;
         scoreText.text = "Score: " + score;
     }
 

@@ -12,7 +12,8 @@ public class flip : MonoBehaviour
     private bool flipped = false;
     private float maxforce = 500f;
     private float torqueRate = 2f;
-    public int height;
+
+    public float height = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +28,15 @@ public class flip : MonoBehaviour
          randforce = Random.Range(-250f, 250f);
          if (!flipped && Input.GetMouseButton(0))
          {
+            //just making sure that height is zero when we aren't in the air
+            height *= 0f;
              force += forceRate;
          }
          else if(!flipped && Input.GetMouseButtonUp(0))
          {
+            //We reward the player for flipping the pancake.
+            //Also, ensures that there is at least 100 points added to the score.
+            height += 1.0f;
             if(force > maxforce)
             {
                 force = maxforce;
@@ -38,12 +44,20 @@ public class flip : MonoBehaviour
              rb2D.AddForce(transform.up * force);
              rb2D.AddForce(transform.right * randforce);
              rb2D.AddTorque(randforce * torqueRate);
-             //flipped = true;
+             flipped = true;
          } 
 
-         if (rb2D.position.y < -5)
+         //adds on to height, with Time.deltaTime used so that height is not dependent on framerate.
+         else if (flipped)
         {
-            rb2D.position = Vector3.zero;
+            height += (1.0f * Time.deltaTime);
+        }
+
+         //Adjusted this to make it easier to adjust to losing the pancake
+         if (rb2D.position.y < -10)
+        {
+            rb2D.position = new Vector3(0, 1, 0);
+            rb2D.velocity = new Vector2(0, 0);
         }
 
     }
@@ -51,5 +65,10 @@ public class flip : MonoBehaviour
     public bool isFlipped()
     {
         return flipped;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        flipped = false;
     }
 }

@@ -18,6 +18,8 @@ public class caughtPancake : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.Instance.addScore(1);
+        //gets height from collided pancake and passes to addScore
+        float h = collision.gameObject.GetComponent<flip>().height;
+        GameManager.Instance.addScore(h);
     }
 }
