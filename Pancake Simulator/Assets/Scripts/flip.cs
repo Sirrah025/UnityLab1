@@ -9,9 +9,12 @@ public class flip : MonoBehaviour
     private Rigidbody2D rb2D;
     private float force = 0f;
     private float randforce;
-    private bool flipped = false;
     private float maxforce = 500f;
     private float torqueRate = 2f;
+
+
+    private bool flipped = false;
+    private bool fell = false;
 
     public float height = 0f;
 
@@ -30,7 +33,7 @@ public class flip : MonoBehaviour
          {
             //just making sure that height is zero when we aren't in the air
             rb2D.rotation = 0;
-            height *= 0f;
+            height -= height;
             force += forceRate;
          }
          else if(!flipped && Input.GetMouseButtonUp(0))
@@ -54,23 +57,26 @@ public class flip : MonoBehaviour
             height += (1.0f * Time.deltaTime);
         }
 
+         //gives no points for having fallen
+         else if (fell)
+        {
+            height -= height;
+        }
+
          //Adjusted this to make it easier to adjust to losing the pancake
          if (rb2D.position.y < -10)
         {
             rb2D.position = new Vector3(0f, 1f, 0f);
             rb2D.velocity = new Vector2(0f, 0f);
+            fell = true;
         }
 
     }
-
-    public bool isFlipped()
-    {
-        return flipped;
-    }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         flipped = false;
+        fell = false;
     }
 
 }
