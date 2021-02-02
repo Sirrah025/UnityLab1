@@ -164,7 +164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566524023
 GameObject:
@@ -200,7 +200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 389}
+  m_AnchoredPosition: {x: -27, y: 207}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566524025
@@ -223,7 +223,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "Hello, chef.\n\nI see you want to know how to cook pancakes. Well, it
+    is very simple. \n\nJust hold down the left mouse button to build up flipping
+    force, then let go to flip your pancake. Don't let it drop. Move the mouse to
+    catch the pancake.\n\nHint: the higher you flip the pancake, the more points
+    you score. So, have fun."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -250,14 +254,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 29.22
+  m_fontSizeBase: 29.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -286,7 +290,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -224.64313, y: -0.000061035156, z: -304.60107, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -336,8 +340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -726.5155, y: -403.37207}
-  m_SizeDelta: {x: 352.969, y: 135.2558}
+  m_AnchoredPosition: {x: -338.24774, y: -245.69629}
+  m_SizeDelta: {x: 223.5135, y: 108.6032}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612904870
 MonoBehaviour:
@@ -497,7 +501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357831440
 GameObject:
@@ -583,8 +587,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78.75
-  m_fontSizeBase: 78.75
+  m_fontSize: 59.3
+  m_fontSizeBase: 59.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -633,6 +637,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357831440}
   m_CullTransparentMesh: 1
+--- !u!1001 &1485263794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8872432698837439150, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439150, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439150, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439151, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872432698837439153, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
+      propertyPath: m_Name
+      value: kitchen
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c37d3bad0d4b21f4ea12ba6b5f0a81f8, type: 3}
 --- !u!1 &1848173397
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +883,7 @@ RectTransform:
   - {fileID: 566524024}
   - {fileID: 612904869}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

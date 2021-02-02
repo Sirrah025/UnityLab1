@@ -29,6 +29,7 @@ public class flip : MonoBehaviour
          if (!flipped && Input.GetMouseButton(0))
          {
             //just making sure that height is zero when we aren't in the air
+            rb2D.rotation = 0;
             height *= 0f;
             force += forceRate;
          }
@@ -46,10 +47,6 @@ public class flip : MonoBehaviour
             rb2D.AddTorque(randforce * torqueRate);
             flipped = true;
          }
-         if (!flipped && Input.GetMouseButton(1))
-        {
-            rb2D.rotation = 0;
-        }
 
          //adds on to height, with Time.deltaTime used so that height is not dependent on framerate.
          else if (flipped)
