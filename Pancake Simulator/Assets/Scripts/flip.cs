@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class flip : MonoBehaviour
 {
-    public float forceRate = 1;
+    public float forceRate = 1f;
 
     private Rigidbody2D rb2D;
     private float force = 0f;
@@ -25,12 +25,12 @@ public class flip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         randforce = Random.Range(-250f, 250f);
+        randforce = Random.Range(-250f, 250f);
          if (!flipped && Input.GetMouseButton(0))
          {
             //just making sure that height is zero when we aren't in the air
             height *= 0f;
-             force += forceRate;
+            force += forceRate;
          }
          else if(!flipped && Input.GetMouseButtonUp(0))
          {
@@ -41,11 +41,15 @@ public class flip : MonoBehaviour
             {
                 force = maxforce;
             }
-             rb2D.AddForce(transform.up * force);
-             rb2D.AddForce(transform.right * randforce);
-             rb2D.AddTorque(randforce * torqueRate);
-             flipped = true;
-         } 
+            rb2D.AddForce(transform.up * force);
+            rb2D.AddForce(transform.right * randforce);
+            rb2D.AddTorque(randforce * torqueRate);
+            flipped = true;
+         }
+         if (!flipped && Input.GetMouseButton(1))
+        {
+            rb2D.rotation = 0;
+        }
 
          //adds on to height, with Time.deltaTime used so that height is not dependent on framerate.
          else if (flipped)
@@ -56,8 +60,8 @@ public class flip : MonoBehaviour
          //Adjusted this to make it easier to adjust to losing the pancake
          if (rb2D.position.y < -10)
         {
-            rb2D.position = new Vector3(0, 1, 0);
-            rb2D.velocity = new Vector2(0, 0);
+            rb2D.position = new Vector3(0f, 1f, 0f);
+            rb2D.velocity = new Vector2(0f, 0f);
         }
 
     }
@@ -71,4 +75,5 @@ public class flip : MonoBehaviour
     {
         flipped = false;
     }
+
 }
