@@ -33,7 +33,7 @@ public class flip : MonoBehaviour
          {
             //just making sure that height is zero when we aren't in the air
             rb2D.rotation = 0;
-            height -= height;
+            height = 0;
             force += forceRate;
          }
          else if(!flipped && Input.GetMouseButtonUp(0))
@@ -60,19 +60,20 @@ public class flip : MonoBehaviour
          //gives no points for having fallen
          else if (fell)
         {
-            height -= height;
+            height = 0;
         }
 
          //Adjusted this to make it easier to adjust to losing the pancake
          if (rb2D.position.y < -10)
         {
+            GameManager.Instance.resetScore();
             rb2D.position = new Vector3(0f, 1f, 0f);
             rb2D.velocity = new Vector2(0f, 0f);
             fell = true;
         }
 
     }
-    
+        
     private void OnCollisionEnter2D(Collision2D collision)
     {
         flipped = false;
