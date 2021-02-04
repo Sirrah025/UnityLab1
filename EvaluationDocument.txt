@@ -6,6 +6,8 @@ The aesthetics of the game are realistic, with real photos for the background, p
 
 One of the struggles we had was dealing with github, as we made the unfortunate choice to merge scenes together and Unity did not like that. It set us back a few and we ended up having to basically redo the project and repo from scratch. One struggle is getting some of our ideas to work, as we did end up dropping one idea because we could not figure out how to make it work: that idea is for the score to only go up when the pancake is flipped to the other side. We ended up streamlining the idea so that whenever you catch the pancake, you will get points regardless of which side it lands. Speaking of sides, there was a weird bug that we had to fix to get the game working properly. If the pancake is flipped over, it will push into the pan which would cause problems. It could potentially give a very high height value and break the game. We solved this by just flipping the pancake over with a button press, and later on to when you just hold down the left mouse button.
 
+Cooper Grimes worked on the physics for the pancake and getting sprites for the pancake and pan. Will Harris worked on the GameManager and getting the scoring and interactions with the pancake refined.
+
 Sprite Attributions:
 Pancake: http://www.clker.com/clipart-pancakes-2.html
 Pan: https://www.kissclipart.com/frying-pan-png-clipart-frying-pan-cookware-627aef/
